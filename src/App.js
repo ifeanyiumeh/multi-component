@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+function StatCard({ label, icon, number }) {
+  return (
+    <div className="stat-card">
+      <div className="stat-line">
+        <span>{icon}</span>
+        <strong>{label}</strong>
+      </div>
+      <p>{number.toLocaleString()}</p>
+    </div>
+  );
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Use components and props in React</h2>
+
+      <StatCard icon="👉🏾" label="Points" number={2000} />
+      <StatCard icon="⚡️" label="Lightnings" number={3567} />
+      <StatCard icon="🤙🏿" label="Shakas" number={4242} />
+      <StatCard icon="👽" label="Aliens" number={69420} />
     </div>
   );
 }
